@@ -16,7 +16,7 @@ if [ "$#" -ne 5 ]; then
     exit 1
 fi
 
-#save machine stats
+#Ssave machine stats
 vmstat_mb="$(vmstat --unit M)"
 hostname="$(hostname -f)"
 
