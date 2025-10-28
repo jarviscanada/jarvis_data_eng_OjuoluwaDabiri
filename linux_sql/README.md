@@ -58,11 +58,11 @@ This project is a lightweight **Linux host monitoring agent** that collects (1) 
 
 ### Architecture (high level)
 - **Agents (per host):**
-    - `host_info.sh`  parses `lscpu`, `vmstat`, `hostname`, `df`; normalizes units; **UPSERTs** one row per host into `host_info`.
-    - `host_usage.sh`  captures `memory_free`, `cpu_idle`, `cpu_kernel`, `disk_io`, `disk_available`; resolves `host_id` via hostname; **INSERTs** a new row into `host_usage`.
+    - `host_info.sh` parses `lscpu`, `vmstat`, `hostname`, `df`; normalizes units; **UPSERTs** one row per host into `host_info`.
+    - `host_usage.sh` captures `memory_free`, `cpu_idle`, `cpu_kernel`, `disk_io`, `disk_available`; resolves `host_id` via hostname; **INSERTs** a new row into `host_usage`.
 - **Database (PostgreSQL):**
-    - `host_info`  dimension table (hardware snapshot). `UNIQUE(hostname)` + `SERIAL id`.
-    - `host_usage`  fact table (metrics over time). `host_id` FK ? `host_info(id)`.
+    - `host_info`  dimension table (hardware snapshot). `UNIQUE(hostname)` + `SERIAL id`.
+    - `host_usage` fact table (metrics over time). `host_id` FK ? `host_info(id)`.
 - **Scheduler:** `cron` runs `host_usage.sh` every minute on each host.
 - **Local Dev (optional):** `psql_docker.sh` provisions a Dockerized Postgres with a persistent volume.
 
@@ -336,8 +336,6 @@ On each Linux host, you roll out the agents by copying `host_info.sh` and `host_
 - Agent rollout: Copy scripts/host_info.sh and scripts/host_usage.sh to each host, run host_info.sh once, install cron entry for host_usage.sh.
 
 # Improvements
-
-## Improvements
 
 One improvement I thought of initially is to implement richer, structured logging so debugging and testing are faster and more reliable. Redirecting raw stdout and stderr is workable but makes it hard to search, correlate, and automate checks. A better approach is for each script to emit JSON lines that include a timestamp in UTC, the hostname, the script name and action, execution duration, exit code, and an error field when something fails. These logs can be written to `/var/log/host_agent/agent.log` and rotated with `logrotate` to control disk usage. Because the format is structured, you can filter by fields with standard CLI tools, feed the data into log processors, and assert invariants in CI (for example, insert succeeded and rows=1). This change turns ad-hoc troubleshooting into a predictable and testable workflow.
 
