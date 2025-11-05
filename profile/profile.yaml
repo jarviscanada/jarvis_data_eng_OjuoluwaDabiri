@@ -39,6 +39,9 @@ jarvis_projects:
     # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: Developed a Linux-based resource monitoring agent that collects, stores, and analyzes real-time system metrics across multiple servers . Implemented using Bash scripts, PostgreSQL, and cron automation; scripted SQL queries for performance reporting and integrated Docker for deployment consistency.
+#  - name: "Springboot App"
+#    git_url: "/springboot"
+#    description: ""
 #  - name: "Core Java Apps"
 #    git_url: "/core_java"
 #    description:
