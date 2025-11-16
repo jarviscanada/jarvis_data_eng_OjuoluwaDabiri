@@ -70,12 +70,12 @@ jarvis_projects:
 highlighted_projects:
     #project name
   - name: "Kafka Consumer Migration"
-    description: Developed APIs and Kafka consumer pipelines using Java and Spring Boot for Kafka topic data migrations, handling over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps.
+    description: Developed APIs and Kafka consumer pipelines using Java and Spring Boot for Kafka topic data migrations, handling over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps team.
   - name: "Premier League Machine Learning Model"
     #URL is optional
     #git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing (normalization, categorical encoding, and feature selection) on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
+    description: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
   - name: "Databricks Premier League Data Pipeline"
     #URL is optional
     git_url: "https://github.com/OJ-Dabiri/MUFCEfficiencyETL"

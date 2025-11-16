@@ -19,9 +19,9 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_OjuoluwaDa
 
 
 ## Highlighted Projects
-**Kafka Consumer Migration**: Developed APIs and Kafka consumer pipelines using Java and Spring Boot for Kafka topic data migrations, handling over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps.
+**Kafka Consumer Migration**: Developed APIs and Kafka consumer pipelines using Java and Spring Boot for Kafka topic data migrations, handling over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps team.
 
-**Premier League Machine Learning Model**: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing (normalization, categorical encoding, and feature selection) on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
+**Premier League Machine Learning Model**: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
 
 **Databricks Premier League Data Pipeline** [[GitHub](https://github.com/OJ-Dabiri/MUFCEfficiencyETL)]: Designed and Architected an end-to-end data pipeline in Databricks to collect, clean, and transform Premier League match data; implemented ETL workflows with PySpark and Delta Lake; tested data quality using SQL and visualization dashboards; deployed interactive insights to Power BI and Tableau for real-time performance tracking.
 
