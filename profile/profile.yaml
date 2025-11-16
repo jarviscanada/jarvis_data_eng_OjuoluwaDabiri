@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_OjuoluwaDa
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary:  I am a software developer with a strong foundation in backend engineering, data analytics, and fintech systems. My professional experience at Moneris allowed me to design and deploy RESTful APIs, optimize Spring Boot microservices, and enhance Kafka based pipelines that supported thousands of daily client transactions. I have built efficient SQL workflows, automated testing environments, and collaborated across Agile teams to maintain reliable CI and CD deployments. Alongside industry experience, I have developed a deep understanding of modern software ecosystems through my Computer Science degree at Wilfrid Laurier University, where I honed my problem solving and architectural reasoning skills through advanced coursework and hands on projects in machine learning, system design, and data visualization. I value teamwork, continuous learning, and thoughtful engineering. My journey from QA automation to full stack development has strengthened both my technical precision and my communication skills, teaching me how to translate complex problems into simple, maintainable solutions. I am driven by curiosity. Whether exploring scalable software infrastructure, improving developer workflows, or mentoring peers, I aim to keep growing into a well rounded developer who builds technology that simplifies systems and delivers measurable impact.
+summary:  I am a software developer with a strong foundation in backend engineering, data analytics, and fintech systems. My professional experience at Moneris allowed me to design and deploy RESTful APIs, optimize Spring Boot microservices, and enhance Kafka based pipelines that supported thousands of daily client transactions. I have built efficient SQL workflows, automated testing environments, and collaborated across Agile teams to maintain reliable CI and CD deployments. Alongside industry experience, I have developed a deep understanding of modern software ecosystems through my Computer Science degree at Wilfrid Laurier University, where I was able to apply my critical and architectural reasoning skills through advanced coursework and hands on projects in machine learning, system design, and data visualization. I value teamwork, continuous learning, and thoughtful engineering. I am driven by curiosity. Whether exploring scalable software infrastructure, improving developer workflows, or mentoring peers, I aim to keep growing into a well rounded developer who builds technology that simplifies systems and delivers measurable impact.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -16,12 +16,13 @@ skills:
     - Spring Boot
     - RDBMS/SQL
     - Apache Kafka
-    - DevOps
+    - Docker
+    - Kubernetes
   # At least 5 skills
   competent:
-    - Amazon Web Services (AWS)
+    - Amazon Web Services
     - JUnit Testing
-    - Linux
+    - Bash Scripting
     - Microsoft Azure
     - C++
   # At least 5 skills
@@ -68,13 +69,13 @@ jarvis_projects:
 # Feel free to add more projects
 highlighted_projects:
     #project name
+  - name: "Kafka Consumer Migration"
+    description: Developed APIs and Kafka consumer pipelines using Java and Spring Boot for Kafka topic data migrations, handling over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps.
   - name: "Premier League Machine Learning Model"
     #URL is optional
     #git_url: "https://github.com/jarviscanada/jarvis_profile_builder"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
-    description: Designed a Python-based machine learning model to predict football match outcomes using Pandas and Scikit Learn; implemented data preprocessing and feature engineering for historical match datasets; tested model accuracy through k-fold validation achieving up to 75 percent accuracy; deployed via Jupyter and GitHub for reproducible performance evaluation.
-  - name: "Kafka Consumer Migration"
-    description: Developed and optimized RESTful APIs and Kafka consumer pipelines in Java Spring Boot to handle over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps.
+    description: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing (normalization, categorical encoding, and feature selection) on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
   - name: "Databricks Premier League Data Pipeline"
     #URL is optional
     git_url: "https://github.com/OJ-Dabiri/MUFCEfficiencyETL"
@@ -91,13 +92,13 @@ professional_experience:
     duration: "October 2025-present"
     # The project description must start with an action verb (https://bit.ly/3guO98u)
     description: "Designing and building full stack and data driven software solutions within an Agile development environment, collaborating with engineers, product leads, and data specialists to architect scalable backend systems, develop RESTful APIs, and automate pipelines that improve system reliability and performance. Working hands on with Java, Python, and SQL to implement clean, maintainable code across multiple projects while contributing to sprint planning, code reviews, and CI CD workflows using Git, Docker, and cloud services."
-  - title: "Software Developer Intern"
+  - title: "Software Developer"
     company: "Moneris"
     duration: "May 2023 - May 2024"
-    description: "Built and optimized complex SQL queries and integrated database-driven features across customer-facing applications, enhancing data accessibility and reporting accuracy. Developed and Deployed RESTful backend APIs and microservices using Java and Spring Boot, contributing to business-facing API development that served over 10,000 client transactions daily. Improved payment API response times by up to 25% by optimizing Apache Kafka consumer pipelines and Node.js backend services, while refactoring inefficient endpoints in collaboration with the core app team. Collaborated with QA and DevOps to execute unit tests and deploy new application features across Agile sprints
+    description: "Developed and Deployed RESTful backend APIs and microservices using Java and Spring Boot, contributing to business-facing API development that served over 10,000 client transactions daily. Improved payment API response times by up to 25% by optimizing Apache Kafka consumer pipelines and Node.js backend services, while refactoring inefficient endpoints in collaboration with the core app team. Collaborated with QA and DevOps to execute unit tests and deploy new application features across Agile sprints
   using CI/CD pipelines. Accelerated deployment cycles by integrating Git-based version control, automated build pipelines, and
   standardized release management processes."
-  - title: "QA Support Intern"
+  - title: "QA Support Analyst"
     company: "Kinesii"
     duration: "June 2022 - April 2023"
     description: "Automated routine diagnostics using PowerShell scripts, reducing help-desk manual troubleshooting time. Managed unit test and SaaS deployment using Docker and GCP Cloud Run, independently creating a test environment for service deployment and integrating it into a lightweight CI/CD pipeline using GitHub Actions. Coordinated customer solution implementation and system installations both remotely and on-site. Collaborated with consultants and IT leadership to implement system upgrades within defined timelines."
@@ -110,7 +111,7 @@ education:
     department: "Computer Science"
     # optional
     awards_achievements:
-      - "Dean's List (2025): Faculty of Science"
+      - "Dean's Honour Roll (2024-2025): Faculty of Science"
 
 #Optional section
 others:
@@ -121,4 +122,5 @@ others:
       - "Google Professional Advanced Data Analysis Certification (2024)"
   - title: "Activities/Hobbies"
     bullets:
+      - Teaching Assistant (Undergraduate)
       - "Competitive Soccer (Grand River Soccer League)"
