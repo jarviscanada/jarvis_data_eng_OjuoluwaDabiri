@@ -1,3 +1,5 @@
 .idea/
+target/
+log/
 grep/data/txt/
 grep/out/
