@@ -1,2 +1,4 @@
 .idea/
 target/
+grep/data/txt/
+grep/out/
