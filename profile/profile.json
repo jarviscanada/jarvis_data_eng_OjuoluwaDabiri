@@ -18,6 +18,7 @@
     },
     {
       "description": "Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.",
+      "git_url": "https://github.com/tolani007/EPL-WinPredictor",
       "name": "Premier League Machine Learning Model"
     },
     {
@@ -31,6 +32,11 @@
       "description": "Developed a Linux-based resource monitoring agent that collects, stores, and analyzes real-time system metrics across multiple servers . Implemented using Bash scripts, PostgreSQL, and cron automation; scripted SQL queries for performance reporting and integrated Docker for deployment consistency.",
       "git_url": "/linux_sql",
       "name": "Cluster Monitor"
+    },
+    {
+      "description": "Grep App - Implemented a simplified version of the Unix grep command in Java. The application recursively searches a directory, reads each file line-by-line, applies a user-defined regex pattern, and writes all matching lines to an output file. The app uses several core software engineering concepts including Java OOP design and I/O, regular expressions, and Stream APIs.\"",
+      "git_url": "/core_java",
+      "name": "Core Java Apps"
     }
   ],
   "name": "Ojuoluwa Dabiri",
