@@ -10,5 +10,7 @@ RUN apt-get update && \
 
 USER airflow
 
-# Install Spark provider (THIS FIXES YOUR ERROR)
+
 RUN pip install --no-cache-dir apache-airflow-providers-apache-spark
+
+USER airflow

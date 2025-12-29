@@ -33,6 +33,7 @@ with DAG(
         task_id="ingest_companies_bronze",
         application="/opt/airflow/src/ingestion/ingest_companies.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="ingest_companies_bronze",
         verbose=True,
     )
@@ -41,6 +42,7 @@ with DAG(
         task_id="ingest_prices_bronze",
         application="/opt/airflow/src/ingestion/ingest_prices.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="ingest_prices_bronze",
         verbose=True,
     )
@@ -53,6 +55,7 @@ with DAG(
         task_id="bronze_to_silver_companies",
         application="/opt/airflow/src/transformations/bronze_to_silver.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="bronze_to_silver_companies",
         verbose=True,
     )
@@ -61,6 +64,7 @@ with DAG(
         task_id="bronze_to_silver_prices",
         application="/opt/airflow/src/transformations/bronze_to_silver.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="bronze_to_silver_prices",
         verbose=True,
     )
@@ -69,6 +73,7 @@ with DAG(
         task_id="silver_data_quality_checks",
         application="/opt/airflow/src/validation/data_quality_checks.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="silver_quality_checks",
         verbose=True,
     )
@@ -81,6 +86,7 @@ with DAG(
         task_id="create_gold_enriched",
         application="/opt/airflow/src/transformations/silver_to_gold.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="create_gold_enriched",
         verbose=True,
     )
@@ -89,6 +95,7 @@ with DAG(
         task_id="create_gold_analytics",
         application="/opt/airflow/src/transformations/silver_to_gold.py",
         conn_id="spark_default",
+        conf={"spark.master": "spark://spark-master:7077"},
         name="create_gold_analytics",
         verbose=True,
     )

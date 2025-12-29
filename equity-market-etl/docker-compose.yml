@@ -28,13 +28,12 @@ services:
   # ----------------------------
   postgres:
     image: postgres:13
-    container_name: airflow-postgres
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
       POSTGRES_DB: airflow
     volumes:
-      - postgres-db-volume:/var/lib/postgresql/data
+      - postgres-db:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "airflow"]
       interval: 5s
@@ -48,22 +47,21 @@ services:
     build:
       context: .
       dockerfile: docker/airflow/Dockerfile
-    container_name: airflow-webserver
-    command: webserver
+    depends_on:
+      postgres:
+        condition: service_healthy
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-      AIRFLOW__CORE__FERNET_KEY: ''
-      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    ports:
-      - "8080:8080"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      _PIP_ADDITIONAL_REQUIREMENTS: apache-airflow-providers-apache-spark
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./src:/opt/airflow/src
       - ./data:/opt/data
-    depends_on:
-      postgres:
-        condition: service_healthy
+    ports:
+      - "8080:8080"
+    command: webserver
 
   # ----------------------------
   # Airflow Scheduler
@@ -72,20 +70,17 @@ services:
     build:
       context: .
       dockerfile: docker/airflow/Dockerfile
-    container_name: airflow-scheduler
-    command: scheduler
+    depends_on:
+      postgres:
+        condition: service_healthy
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
-      AIRFLOW__CORE__FERNET_KEY: ''
-      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./src:/opt/airflow/src
       - ./data:/opt/data
-    depends_on:
-      postgres:
-        condition: service_healthy
+    command: scheduler
 
   # ----------------------------
   # Spark Master
@@ -93,13 +88,17 @@ services:
   spark-master:
     image: apache/spark:3.5.0
     container_name: spark-master
-    command: bin/spark-class org.apache.spark.deploy.master.Master
+    command: >
+      bash -c "
+      /opt/spark/bin/spark-class
+      org.apache.spark.deploy.master.Master
+      "
     ports:
       - "7077:7077"
       - "8081:8080"
     volumes:
       - ./data:/opt/data
-    restart: always
+    restart: unless-stopped
 
   # ----------------------------
   # Spark Worker
@@ -108,13 +107,16 @@ services:
     image: apache/spark:3.5.0
     container_name: spark-worker
     command: >
-      bin/spark-class org.apache.spark.deploy.worker.Worker
+      bash -c "
+      /opt/spark/bin/spark-class
+      org.apache.spark.deploy.worker.Worker
       spark://spark-master:7077
+      "
     depends_on:
       - spark-master
     volumes:
       - ./data:/opt/data
-    restart: always
+    restart: unless-stopped
 
 volumes:
-  postgres-db-volume:
+  postgres-db:
