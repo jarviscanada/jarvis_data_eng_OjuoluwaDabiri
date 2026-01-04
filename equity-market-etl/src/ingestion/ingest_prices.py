@@ -10,6 +10,7 @@ logger = logging.getLogger(__name__)
 def define_price_schema():
     
     return StructType([
+        StructField("Ticker", StringType(), True),
         StructField("Date", StringType(), True),
         StructField("Open", DoubleType(), True),
         StructField("High", DoubleType(), True),
@@ -23,7 +24,7 @@ def define_price_schema():
 def ingest_prices_to_bronze() -> None:
     
     logger.info("=" * 70)
-    logger.info("BRONZE INGESTION: Price Data (OPTIMIZED)")
+    logger.info("BRONZE INGESTION: Price Data")
     logger.info("=" * 70)
     
     paths = Paths()

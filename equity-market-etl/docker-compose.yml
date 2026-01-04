@@ -30,6 +30,10 @@ x-airflow-common: &airflow-common
     
     # Data volumes (critical for pipeline)
     - ./data:/opt/data
+
+    #testing
+    - ./tests:/opt/airflow/tests         
+    - ./pytest.ini:/opt/airflow/pytest.ini
   
   depends_on:
     postgres:
