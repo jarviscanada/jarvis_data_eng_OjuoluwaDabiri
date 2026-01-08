@@ -17,11 +17,13 @@ Project source code: [https://github.com/jarviscanada/jarvis_data_eng_OjuoluwaDa
 
 **Cluster Monitor** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_OjuoluwaDabiri/tree/master/linux_sql)]: Developed a Linux-based resource monitoring agent that collects, stores, and analyzes real-time system metrics across multiple servers . Implemented using Bash scripts, PostgreSQL, and cron automation; scripted SQL queries for performance reporting and integrated Docker for deployment consistency.
 
+**Core Java Apps** [[GitHub](https://github.com/jarviscanada/jarvis_data_eng_OjuoluwaDabiri/tree/master/core_java)]: Grep App - Implemented a simplified version of the Unix grep command in Java. The application recursively searches a directory, reads each file line-by-line, applies a user-defined regex pattern, and writes all matching lines to an output file. The app uses several core software engineering concepts including Java OOP design and I/O, regular expressions, and Stream APIs."
+
 
 ## Highlighted Projects
 **Kafka Consumer Migration**: Developed APIs and Kafka consumer pipelines using Java and Spring Boot for Kafka topic data migrations, handling over ten thousand daily client transactions; implemented SQL optimization and microservice refactoring; tested endpoints via Postman and JUnit; deployed through CI CD pipelines in collaboration with DevOps team.
 
-**Premier League Machine Learning Model**: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
+**Premier League Machine Learning Model** [[GitHub](https://github.com/tolani007/EPL-WinPredictor)]: Developed a Python-based predictive model for football match outcomes using Pandas and Scikit-Learn, incorporating extensive preprocessing on multi-season historical match datasets from the last 15 seasons. Evaluated model performance by comparing to actual results over 4 weeks, and by using stratified k-fold cross-validation, reporting metrics such as accuracy, macro-F1, and Brier score, with peak accuracy near 75%.
 
 **Databricks Premier League Data Pipeline** [[GitHub](https://github.com/OJ-Dabiri/MUFCEfficiencyETL)]: Designed and Architected an end-to-end data pipeline in Databricks to collect, clean, and transform Premier League match data; implemented ETL workflows with PySpark and Delta Lake; tested data quality using SQL and visualization dashboards; deployed interactive insights to Power BI and Tableau for real-time performance tracking.
 
